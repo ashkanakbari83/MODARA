@@ -14,6 +14,7 @@ import type { Project } from '@/data/models'
 import { projectRepository } from '@/data/repositories/projectRepository'
 import { useLiveData } from '@/data/useLiveData'
 import { messages as m } from '@/locales'
+import { ProjectContentPanel } from './ProjectContentPanel'
 import { ProjectOverviewPanel } from './ProjectOverviewPanel'
 import { projectColor, STATUS_TONE } from './projectMeta'
 import styles from './ProjectDetailPage.module.css'
@@ -122,6 +123,8 @@ function ProjectDetail({ project }: { project: Project }) {
       <TabPanel idPrefix={ID_PREFIX} id={tab}>
         {tab === 'overview' ? (
           <ProjectOverviewPanel project={project} />
+        ) : tab === 'content' ? (
+          <ProjectContentPanel projectId={project.id} projectName={project.name} />
         ) : tab === 'notes' ? (
           <Card padding="lg">
             {project.notes ? (

@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.titleLink {
+  overflow-wrap: anywhere;
+}
+
+.titleLink:hover {
+  color: var(--color-primary-text);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.project,
+.assignee {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.deadline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.deadlineLabel,
+.muted {
+  color: var(--color-text-muted);
+}
+
+.actions {
+  margin-block-start: var(--space-1);
+}
+
+.actions button {
+  inline-size: 100%;
+}

@@ -1,0 +1,32 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-drawer) + 10);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+.dialog {
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: 30rem;
+  max-block-size: 90dvh;
+  padding: var(--space-6);
+  overflow-y: auto;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.title {
+  margin-block-end: var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+}

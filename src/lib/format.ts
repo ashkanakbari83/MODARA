@@ -122,3 +122,27 @@ const jalaliDateFormatter = new Intl.DateTimeFormat(localeConfig.calendarLocale,
 export function formatIsoDate(iso: string): string {
   return jalaliDateFormatter.format(isoToDate(iso))
 }
+
+const jalaliDateTimeFormatter = new Intl.DateTimeFormat(localeConfig.calendarLocale, {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: localeConfig.timeZone,
+})
+
+/** Jalali date and time from a stored ISO timestamp, in the workspace time zone. */
+export function formatJalaliDateTime(isoDateTime: string): string {
+  return jalaliDateTimeFormatter.format(new Date(isoDateTime))
+}
+
+const hoursInputFormatter = new Intl.NumberFormat(localeConfig.numberLocale, {
+  maximumFractionDigits: 2,
+  useGrouping: false,
+})
+
+/** Minutes as editable hours text (up to two decimals, no grouping), e.g. 90 becomes "۱٫۵". */
+export function formatHoursForInput(minutes: number): string {
+  return minutes > 0 ? hoursInputFormatter.format(minutes / 60) : ''
+}

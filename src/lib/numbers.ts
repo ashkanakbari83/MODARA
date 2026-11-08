@@ -14,13 +14,13 @@ export function toPersianDigits(text: string): string {
 }
 
 /**
- * Parses a user-typed non-negative number. Accepts Persian digits, spaces and
- * thousands separators. Returns null for blank input and NaN for invalid input.
+ * Parses a user-typed non-negative number. Accepts Persian digits, spaces,
+ * thousands separators and "٫" or "/" as the decimal mark. Returns null for blank input and NaN for invalid input.
  */
 export function parseNumberInput(text: string): number | null {
   const cleaned = normalizeDigits(text)
     .replace(/[\s,٬،]/g, '')
-    .replace(/٫/g, '.')
+    .replace(/[٫/]/g, '.')
   if (cleaned === '') return null
   if (!/^\d+(\.\d+)?$/.test(cleaned)) return Number.NaN
   return Number(cleaned)

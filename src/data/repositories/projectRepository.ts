@@ -4,8 +4,8 @@ import type { ID, Project, ProjectInput, ProjectStatus } from '../models'
 
 /**
  * All reads and writes of projects go through here, so components never touch
- * Dexie directly. When content, tasks and files exist, remove() must also delete
- * or detach their dependent records inside one transaction.
+ * Dexie directly. remove() cascades to everything linked by projectId. Tasks and files
+ * must be added to that transaction when those modules are built.
  */
 export const projectRepository = {
   async list(): Promise<Project[]> {
@@ -47,7 +47,13 @@ export const projectRepository = {
     })
   },
 
+  /** Deletes the project together with its content and status history, in one transaction. */
   async remove(id: ID): Promise<void> {
-    await db.projects.delete(id)
+    await db.transaction('rw', db.projects, db.contents, db.contentStatusHistory, async () => {
+      const contentIds = (await db.contents.where('projectId').equals(id).primaryKeys()) as ID[]
+      await db.contentStatusHistory.where('contentId').anyOf(contentIds).delete()
+      await db.contents.where('projectId').equals(id).delete()
+      await db.projects.delete(id)
+    })
   },
 }

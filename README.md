@@ -18,8 +18,10 @@ npm run build
 
 ## Status
 - Batch 1 (done): design system, RTL/Persian setup, app shell, sample-data dashboard.
-- Batch 2 (done): IndexedDB layer (Dexie schema v1: projects, settings), repositories, Jalali date helpers.
-- Batch 3 (done): project management (create, edit, archive/restore, delete, list with search and filters, detail page with nine tabs).
-- Next: content items + manual workflow, then tasks and generation, planner, calendar, real dashboard data.
+- Batch 2 (done): IndexedDB layer (Dexie), repositories, Jalali date helpers.
+- Batch 3 (done): project management.
+- Batch 4 (done): content items, manual status workflow with history, list and production board, filters, duplicate, project content tab. Database schema v2.
+- Next: tasks and production-task generation, daily planner, calendar, real dashboard data, first-run onboarding.
 
-The dashboard still shows clearly marked sample data until content and tasks exist.
+Workflow statuses change only when the user records a change; nothing moves automatically.
+The dashboard still shows clearly marked sample data until tasks exist.
