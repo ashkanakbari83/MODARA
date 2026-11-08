@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { currentDate } from '@/lib/now'
 import { buildDashboardViewModel } from './dashboardSelectors'
 import { sampleDashboard } from './sample/dashboardSample'
 import type { DashboardViewModel } from './types'
@@ -18,7 +19,7 @@ export function useDashboardData(): DashboardState {
   return useMemo<DashboardState>(
     () => ({
       source: 'sample',
-      data: buildDashboardViewModel(sampleDashboard, new Date()),
+      data: buildDashboardViewModel(sampleDashboard, currentDate()),
     }),
     [],
   )

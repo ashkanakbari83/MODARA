@@ -1,0 +1,45 @@
+.scroller {
+  overflow-x: auto;
+  border-block-end: 1px solid var(--color-border);
+  scrollbar-width: thin;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-1);
+  inline-size: max-content;
+  min-inline-size: 100%;
+}
+
+.tab {
+  position: relative;
+  min-block-size: var(--touch-target);
+  padding-inline: var(--space-4);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.selected {
+  color: var(--color-primary-text);
+  font-weight: var(--weight-semibold);
+}
+
+.selected::after {
+  content: '';
+  position: absolute;
+  inset-inline: var(--space-3);
+  inset-block-end: -1px;
+  block-size: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-primary);
+}
+
+.panel {
+  padding-block-start: var(--space-5);
+  outline: none;
+}

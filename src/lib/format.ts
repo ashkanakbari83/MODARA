@@ -1,4 +1,5 @@
 import { localeConfig, messages as m } from '@/locales'
+import { isoToDate } from './jalali'
 
 const MS_PER_DAY = 86_400_000
 
@@ -108,4 +109,16 @@ export function getGreetingKey(date: Date): GreetingKey {
   if (hour >= 12 && hour < 17) return 'afternoon'
   if (hour >= 17 && hour < 21) return 'evening'
   return 'night'
+}
+
+const jalaliDateFormatter = new Intl.DateTimeFormat(localeConfig.calendarLocale, {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: localeConfig.timeZone,
+})
+
+/** Jalali date from a stored "YYYY-MM-DD" value, e.g. "۱۶ آبان ۱۴۰۵". */
+export function formatIsoDate(iso: string): string {
+  return jalaliDateFormatter.format(isoToDate(iso))
 }

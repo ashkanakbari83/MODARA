@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  block-size: 100%;
+  min-inline-size: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  transition:
+    border-color var(--duration-fast) var(--ease),
+    box-shadow var(--duration-fast) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.dot {
+  flex: none;
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+  margin-block-start: 0.45rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 0 1px var(--color-border-strong);
+}
+
+.titleBlock {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.name {
+  overflow-wrap: anywhere;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+.subtitle {
+  overflow-wrap: anywhere;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.fact {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.fact dt {
+  color: var(--color-text-muted);
+}
+
+.fact dd {
+  font-weight: var(--weight-medium);
+  text-align: end;
+}

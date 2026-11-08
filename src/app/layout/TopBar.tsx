@@ -2,6 +2,7 @@ import { Menu } from 'lucide-react'
 import { BrandMark } from '@/components/ui/BrandMark'
 import { IconButton } from '@/components/ui/IconButton'
 import { formatJalaliLong } from '@/lib/format'
+import { currentDate } from '@/lib/now'
 import { messages as m } from '@/locales'
 import { ThemeToggle } from './ThemeToggle'
 import styles from './TopBar.module.css'
@@ -26,7 +27,7 @@ export function TopBar({ onOpenMenu }: TopBarProps) {
         <BrandMark size={28} />
         <span className={styles.brandName}>{m.app.name}</span>
       </div>
-      <p className={styles.date}>{formatJalaliLong(new Date())}</p>
+      <p className={styles.date}>{formatJalaliLong(currentDate())}</p>
       <div className={styles.actions}>
         <ThemeToggle variant="icon" />
       </div>

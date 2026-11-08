@@ -17,5 +17,9 @@ npm run build
 ```
 
 ## Status
-Phase 1, Batch 1 done: design system, RTL/Persian setup, app shell, sample-data dashboard.
-Dexie is installed but not used yet. The dashboard shows clearly marked sample data.
+- Batch 1 (done): design system, RTL/Persian setup, app shell, sample-data dashboard.
+- Batch 2 (done): IndexedDB layer (Dexie schema v1: projects, settings), repositories, Jalali date helpers.
+- Batch 3 (done): project management (create, edit, archive/restore, delete, list with search and filters, detail page with nine tabs).
+- Next: content items + manual workflow, then tasks and generation, planner, calendar, real dashboard data.
+
+The dashboard still shows clearly marked sample data until content and tasks exist.

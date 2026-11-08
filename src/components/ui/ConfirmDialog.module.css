@@ -1,0 +1,43 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-drawer) + 10);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+.dialog {
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: 28rem;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+}
+
+.description {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-block-start: var(--space-6);
+}
