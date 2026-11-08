@@ -1,18 +1,22 @@
 {
   "name": "modara",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "typecheck": "tsc -b",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/vazirmatn": "^5.0.0",
     "dexie": "^4.4.7",
+    "lucide-react": "^0.544.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-router-dom": "^7.0.0",
     "zustand": "^5.1.0"
   },
   "devDependencies": {

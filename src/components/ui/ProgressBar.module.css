@@ -1,0 +1,28 @@
+.track {
+  block-size: 0.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-sunken);
+}
+
+.fill {
+  block-size: 100%;
+  border-radius: var(--radius-full);
+  transition: inline-size var(--duration) var(--ease);
+}
+
+.primary {
+  background: var(--color-primary);
+}
+
+.success {
+  background: var(--color-success);
+}
+
+.warning {
+  background: var(--color-warning);
+}
+
+.danger {
+  background: var(--color-danger);
+}

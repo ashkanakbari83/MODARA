@@ -1,10 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>modara</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#eff2f6" />
+    <meta name="description" content="مدارا (MODARA)؛ مدیریت عملیات تولید محتوا" />
+    <title>مدارا | MODARA</title>
+    <script>
+      // Apply the saved theme before first paint to avoid a light/dark flash.
+      (function () {
+        try {
+          var saved = JSON.parse(localStorage.getItem('modara:preferences') || '{}')
+          var theme = (saved.state && saved.state.theme) || 'system'
+          var dark =
+            theme === 'dark' ||
+            (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+        } catch (error) {
+          /* ignore: the app applies the theme again after it starts */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,47 @@
+.ring {
+  position: relative;
+  flex: none;
+  inline-size: 8.25rem;
+  block-size: 8.25rem;
+}
+
+.ring svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.track {
+  fill: none;
+  stroke: var(--hero-track);
+  stroke-width: 10;
+}
+
+.arc {
+  fill: none;
+  stroke: var(--hero-arc);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray var(--duration) var(--ease);
+}
+
+.arcOver {
+  stroke: var(--hero-arc-over);
+}
+
+.planet {
+  fill: var(--color-accent);
+  stroke: var(--hero-bg);
+  stroke-width: 3;
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}

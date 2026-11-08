@@ -1,0 +1,582 @@
+/* Dashboard layout and section styles. Shared by the components in ./components. */
+
+.layout {
+  display: grid;
+  gap: var(--space-5);
+  min-inline-size: 0;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+@media (min-width: 64rem) {
+  .layout {
+    gap: var(--space-6);
+  }
+
+  .twoCol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+/* ---------- Sample data notice ---------- */
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px dashed var(--color-warning);
+  border-radius: var(--radius-lg);
+  background: var(--color-warning-soft);
+  color: var(--color-warning-text);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.notice svg {
+  margin-block-start: 0.125rem;
+}
+
+.noticeTitle {
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  gap: var(--space-5);
+  min-inline-size: 0;
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  background: var(--hero-bg);
+  color: var(--hero-text);
+  box-shadow: var(--shadow-md);
+}
+
+.heroTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+}
+
+.heroDate {
+  margin-block-start: var(--space-1);
+  color: var(--hero-muted);
+}
+
+.heroCapacity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.ringValue {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: 1.4;
+}
+
+.ringCaption {
+  color: var(--hero-muted);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+}
+
+.capacityText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+.capacityTitle {
+  color: var(--hero-muted);
+  font-size: var(--text-sm);
+}
+
+.capacityPlanned {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+.capacityOf {
+  color: var(--hero-muted);
+  font-size: var(--text-sm);
+}
+
+.heroMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.heroMetric {
+  min-inline-size: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--hero-surface);
+}
+
+.heroMetric dt {
+  color: var(--hero-muted);
+  font-size: var(--text-xs);
+}
+
+.heroMetric dd {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.overNote {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--hero-surface);
+  color: var(--hero-arc-over);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: var(--space-8);
+  }
+
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .heroMetrics,
+  .overNote {
+    grid-column: 1 / -1;
+  }
+
+  .heroMetric dd {
+    font-size: var(--text-base);
+  }
+}
+
+/* ---------- Stats strip ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-border);
+}
+
+.statCell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+}
+
+.statValue {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+.statAlert {
+  color: var(--color-danger-text);
+}
+
+.statLabel {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 48rem) {
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .statCell {
+    padding: var(--space-5);
+  }
+}
+
+/* ---------- Shared pieces ---------- */
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: var(--touch-target);
+  color: var(--color-primary-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.empty {
+  padding-block: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.cardDescription {
+  margin-block-end: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-end: var(--space-2);
+}
+
+.sectionTitle {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- Row lists (today, deadlines) ---------- */
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  padding-block: var(--space-3);
+}
+
+.row + .row {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.rowMain {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.rowTitle {
+  overflow-wrap: anywhere;
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+}
+
+.rowDone {
+  color: var(--color-text-subtle);
+  text-decoration: line-through;
+}
+
+.rowSub {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.rowEnd {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  text-align: end;
+}
+
+.statusDone {
+  color: var(--color-success);
+}
+
+.statusProgress {
+  color: var(--color-info);
+}
+
+.statusPlanned {
+  color: var(--color-border-strong);
+}
+
+.kindChip {
+  display: grid;
+  flex: none;
+  place-items: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  border-radius: var(--radius-md);
+}
+
+.kindFilming {
+  background: var(--color-info-soft);
+  color: var(--color-info-text);
+}
+
+.kindEditing {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-text);
+}
+
+.kindReview {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-text);
+}
+
+.kindPublishing {
+  background: var(--color-success-soft);
+  color: var(--color-success-text);
+}
+
+.dayLabel {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.dayUrgent {
+  color: var(--color-warning-text);
+}
+
+/* ---------- Projects ---------- */
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  block-size: 100%;
+}
+
+.projectHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.projectDot {
+  flex: none;
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.projectTitleBlock {
+  min-inline-size: 0;
+}
+
+.projectName {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+.projectCategory {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.progressNumbers {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.fact {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.fact dt {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.factValue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  font-weight: var(--weight-medium);
+  text-align: end;
+}
+
+.factMuted {
+  color: var(--color-text-muted);
+  font-weight: var(--weight-regular);
+}
+
+@media (min-width: 48rem) {
+  .projectGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .projectGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+/* ---------- Pipeline ---------- */
+
+.stack {
+  display: flex;
+  gap: 2px;
+  block-size: 0.875rem;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-sunken);
+}
+
+.stackSegment {
+  min-inline-size: 4px;
+}
+
+.stagePlanning {
+  background: var(--color-chart-neutral);
+}
+
+.stageProduction {
+  background: var(--color-chart-2);
+}
+
+.stageEditing {
+  background: var(--color-chart-1);
+}
+
+.stageReview {
+  background: var(--color-chart-3);
+}
+
+.stageScheduled {
+  background: var(--color-chart-4);
+}
+
+.stagePublished {
+  background: var(--color-chart-6);
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin-block-start: var(--space-5);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  font-size: var(--text-sm);
+}
+
+.swatch {
+  flex: none;
+  inline-size: 0.625rem;
+  block-size: 0.625rem;
+  border-radius: 3px;
+}
+
+.legendCount {
+  margin-inline-start: auto;
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------- Finance ---------- */
+
+.financeShare {
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.financeRows {
+  margin-block-start: var(--space-4);
+}
+
+.financeRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-block-start: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.financeRow dt {
+  color: var(--color-text-muted);
+}
+
+.financeRow dd {
+  font-weight: var(--weight-semibold);
+  text-align: end;
+}
+
+.financeNet dt {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.financeNet dd {
+  color: var(--color-primary-text);
+  font-size: var(--text-md);
+}
+
+.note {
+  margin-block-start: var(--space-2);
+  color: var(--color-text-subtle);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+}
+
+.heroText {
+  min-inline-size: 0;
+}

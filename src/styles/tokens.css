@@ -1,0 +1,183 @@
+/*
+ * MODARA design tokens.
+ * Identity: lapis blue (primary) + saffron (accent) on cool, quiet neutrals.
+ * Components must use these variables instead of raw values.
+ * Spacing, radius and layout tokens use logical-property friendly units.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Typography */
+  --font-sans: 'Vazirmatn Variable', Vazirmatn, system-ui, 'Segoe UI', Tahoma, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.125rem;
+  --leading-tight: 1.4;
+  --leading-snug: 1.6;
+  --leading-normal: 1.8;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Spacing scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
+
+  /* Layout */
+  --sidebar-width: 16.5rem;
+  --sidebar-width-collapsed: 4.75rem;
+  --topbar-height: 3.5rem;
+  --bottomnav-height: 4rem;
+  --content-max: 74rem;
+  --touch-target: 2.75rem;
+
+  /* Layers */
+  --z-nav: 30;
+  --z-drawer: 50;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration: 220ms;
+
+  /* Surfaces */
+  --color-bg: #eff2f6;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f7f9fb;
+  --color-surface-sunken: #e6ebf1;
+  --color-border: #dde3ea;
+  --color-border-strong: #c3ccd8;
+  --color-overlay: rgb(10 18 32 / 0.5);
+
+  /* Text */
+  --color-text: #101c2b;
+  --color-text-muted: #4d5b6d;
+  --color-text-subtle: #5f6e82;
+
+  /* Brand */
+  --color-primary: #2b4fb0;
+  --color-primary-hover: #223f8f;
+  --color-primary-soft: #e6ecfb;
+  --color-primary-text: #223f8f;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #e3a21a;
+  --color-accent-soft: #fdf3d8;
+  --color-accent-text: #7a5200;
+  --color-focus: #2f6df0;
+
+  /* Status */
+  --color-success: #2a7f55;
+  --color-success-soft: #e2f4ea;
+  --color-success-text: #1c6140;
+  --color-warning: #b4690e;
+  --color-warning-soft: #fdecd2;
+  --color-warning-text: #7e4a08;
+  --color-info: #1b7f9e;
+  --color-info-soft: #def2f7;
+  --color-info-text: #14607a;
+  --color-danger: #c4403a;
+  --color-danger-soft: #fce7e5;
+  --color-danger-text: #a02e29;
+
+  /* Data colors (charts, project markers) */
+  --color-chart-1: #2b4fb0;
+  --color-chart-2: #1b9aa0;
+  --color-chart-3: #e3a21a;
+  --color-chart-4: #7a5fb0;
+  --color-chart-5: #d4607a;
+  --color-chart-6: #2a7f55;
+  --color-chart-neutral: #b3bdca;
+
+  /* Hero panel (the one deep-colored surface on the dashboard) */
+  --hero-bg: #13295c;
+  --hero-text: #f4f7ff;
+  --hero-muted: #b4c2e6;
+  --hero-surface: rgb(255 255 255 / 0.08);
+  --hero-track: rgb(255 255 255 / 0.16);
+  --hero-arc: #c5d4ff;
+  --hero-arc-over: #ff9d8a;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgb(16 28 43 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(16 28 43 / 0.08), 0 1px 2px rgb(16 28 43 / 0.04);
+  --shadow-md: 0 8px 20px -6px rgb(16 28 43 / 0.16), 0 2px 6px -2px rgb(16 28 43 / 0.08);
+  --shadow-lg: 0 20px 44px -14px rgb(16 28 43 / 0.3);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #0a101c;
+  --color-surface: #111a2b;
+  --color-surface-muted: #152036;
+  --color-surface-sunken: #0c1424;
+  --color-border: #1f2c44;
+  --color-border-strong: #2d3d5c;
+  --color-overlay: rgb(2 6 14 / 0.65);
+
+  --color-text: #e7edf7;
+  --color-text-muted: #a5b3c9;
+  --color-text-subtle: #8c9bb3;
+
+  --color-primary: #86a3f5;
+  --color-primary-hover: #a2b9f8;
+  --color-primary-soft: rgb(134 163 245 / 0.14);
+  --color-primary-text: #b3c6fa;
+  --color-primary-contrast: #0a1330;
+  --color-accent: #f0b83d;
+  --color-accent-soft: rgb(240 184 61 / 0.14);
+  --color-accent-text: #f4cb73;
+  --color-focus: #8ab8ee;
+
+  --color-success: #5fcb93;
+  --color-success-soft: rgb(95 203 147 / 0.14);
+  --color-success-text: #86d9a8;
+  --color-warning: #eeaa55;
+  --color-warning-soft: rgb(238 170 85 / 0.14);
+  --color-warning-text: #f2c387;
+  --color-info: #5cc0d9;
+  --color-info-soft: rgb(92 192 217 / 0.14);
+  --color-info-text: #8fd6e8;
+  --color-danger: #f2857c;
+  --color-danger-soft: rgb(242 133 124 / 0.14);
+  --color-danger-text: #f5a8a1;
+
+  --color-chart-1: #86a3f5;
+  --color-chart-2: #4fc3c9;
+  --color-chart-3: #f0b83d;
+  --color-chart-4: #a590d6;
+  --color-chart-5: #e68aa0;
+  --color-chart-6: #5fcb93;
+  --color-chart-neutral: #46556f;
+
+  --hero-bg: #172a5a;
+  --hero-text: #f2f6ff;
+  --hero-muted: #b0bfe3;
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 8px 20px -6px rgb(0 0 0 / 0.5), 0 2px 6px -2px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 20px 44px -14px rgb(0 0 0 / 0.6);
+}
