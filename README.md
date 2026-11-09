@@ -1,4 +1,4 @@
-# MODARA (مدارا)
+# MODARA
 
 Persian (RTL), mobile-first content operations management app.
 React + Vite + TypeScript, Zustand, local-first (IndexedDB via Dexie, added in Batch 2).
